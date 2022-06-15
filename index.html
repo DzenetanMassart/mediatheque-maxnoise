@@ -7,6 +7,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        @media screen and (orientation:portrait) {
+  /*Vertical screen style*/
+  body {
+    transform-origin: 0 0;
+    transform: rotateZ(90deg) translateY(-100%);
+  }
+}
         .row{
             --bs-gutter-x: -0.5rem;
         }
