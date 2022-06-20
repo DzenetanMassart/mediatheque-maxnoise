@@ -49,53 +49,67 @@ if (m<10) {m = "0" + m}
 
 setTimeout(function(){
 let proch=[30600,33300,36000,38700,39600,42300,45000,48000,50700,53400,54300,57000];
+const heure_c=["h1","h2","h3","r1","h4","h5","tm","h6","h7","r2","h8","h9"];
 if(proch[1]>timestampNow && proch[0]<timestampNow){
-    document.getElementById("h1").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[1]-timestampNow +" secondes avant la deuxième heure"
+    document.getElementById(heure_c[0]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[1]-timestampNow)/60) +" minutes avant la deuxième heure"
 }else if(proch[2]>timestampNow && proch[1]<timestampNow){
-    document.getElementById("h2").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[2]-timestampNow +" secondes avant la troisième heure"
+    document.getElementById(heure_c[0]).classList.remove("cligno");
+    document.getElementById(heure_c[1]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[2]-timestampNow)/60) +" minutes avant la troisième heure"
 
 }else if(proch[3]>timestampNow && proch[2]<timestampNow){
-    document.getElementById("h3").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[3]-timestampNow +" secondes avant la première récré"
+    document.getElementById(heure_c[1]).classList.remove("cligno");
+    document.getElementById(heure_c[2]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[3]-timestampNow)/60) +" minutes avant la première récré"
 
 }else if(proch[4]>timestampNow && proch[3]<timestampNow){
-    document.getElementById("r1").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[4]-timestampNow +" secondes avant la quatrième heure"
+    document.getElementById(heure_c[2]).classList.remove("cligno");
+    document.getElementById(heure_c[3]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[4]-timestampNow)/60) +" minutes avant la quatrième heure"
 
 }else if(proch[5]>timestampNow && proch[4]<timestampNow){
-    document.getElementById("h4").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=Math.floor((proch[5]-timestampNow)/60)+" minutes avant la cinquième heure";
+    document.getElementById(heure_c[3]).classList.remove("cligno");
+    document.getElementById(heure_c[4]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[5]-timestampNow)/60) +" minutes avant la cinquième heure";
 
 }else if(proch[6]>timestampNow && proch[5]<timestampNow){
-    document.getElementById("h5").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[6]-timestampNow +" secondes avant le temps de midi"
+    document.getElementById(heure_c[4]).classList.remove("cligno");
+    document.getElementById(heure_c[5]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[6]-timestampNow)/60) +" minutes avant le temps de midi"
 
 }else if(proch[7]>timestampNow && proch[6]<timestampNow){
-    document.getElementById("tm").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[7]-timestampNow +" secondes avant la sixième heure"
+    document.getElementById(heure_c[5]).classList.remove("cligno");
+    document.getElementById(heure_c[6]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[7]-timestampNow)/60) +" minutes avant la sixième heure"
 
 }else if(proch[8]>timestampNow && proch[7]<timestampNow){
-    document.getElementById("h6").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[8]-timestampNow +" secondes avant la septième heure"
+    document.getElementById(heure_c[6]).classList.remove("cligno");
+    document.getElementById(heure_c[7]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[8]-timestampNow)/60) +" minutes avant la septième heure"
 
 }else if(proch[9]>timestampNow && proch[8]<timestampNow){
-    document.getElementById("h7").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[9]-timestampNow +" secondes avant la deuxième récré"
+    document.getElementById(heure_c[7]).classList.remove("cligno");
+    document.getElementById(heure_c[8]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[9]-timestampNow)/60) +" minutes avant la deuxième récré"
 
 }else if(proch[10]>timestampNow && proch[9]<timestampNow){
-    document.getElementById("r2").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[10]-timestampNow +" secondes avant la huitième heure"
+    document.getElementById(heure_c[8]).classList.remove("cligno");
+    document.getElementById(heure_c[9]).classList.add("cligno");
+        document.getElementById("reste").innerHTML=Math.floor((proch[10]-timestampNow)/60) +" minutes avant la huitième heure"
 
 }else if(proch[11]>timestampNow && proch[10]<timestampNow){
-    document.getElementById("h8").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[11]-timestampNow +" secondes avant la neuvième heure"
+    document.getElementById("reste").innerHTML=Math.floor((proch[11]-timestampNow)/60) +" minutes avant la neuvième heure"
+    document.getElementById(heure_c[9]).classList.remove("cligno");
+    document.getElementById(heure_c[10]).classList.add("cligno");
 
 }else if(proch[12]>timestampNow && proch[11]<timestampNow){
-    document.getElementById("h9").classList.toggle("cligno");
-    document.getElementById("reste").innerHTML=proch[12]-timestampNow +" secondes avant la fin de la journée"
+    document.getElementById(heure_c[10]).classList.remove("cligno");
+    document.getElementById(heure_c[11]).classList.add("cligno");
+    document.getElementById("reste").innerHTML=Math.floor((proch[12]-timestampNow)/60) +" minutes avant la fin de la journée"
 
 }
 },16.6666667);
+
 },1000);
+
